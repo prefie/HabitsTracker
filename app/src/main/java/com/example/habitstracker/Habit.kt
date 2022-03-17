@@ -10,20 +10,4 @@ data class Habit (
 ) : java.io.Serializable {
 }
 
-val habits: MutableList<Habit> = mutableListOf(
-    Habit(
-        "Бегать по утрам",
-        "Нужно не лениться и заставить себя встать рано утром и побежать",
-        "Высокий",
-        "1 раз",
-        "Каждый день",
-        "Полезная"
-    ), Habit(
-        "Курить",
-        "Пора бросать курить, отказываться от сигарет",
-        "Средний",
-        "Пару раз",
-        "Несколько раз в неделю",
-        "Вредная"
-    )
-)
+val habits: MutableList<Habit> = mutableListOf()
