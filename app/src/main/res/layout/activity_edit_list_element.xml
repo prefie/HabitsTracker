@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".EditListElementActivity">
+    <TextView
+            style="@style/edit_element"
+            android:id="@+id/textViewNameActivity"
+            android:text="@string/create_habit"
+            android:gravity="center"
+            android:textSize="@dimen/header_size"/>
+
+    <RelativeLayout
+            style="@style/base_style"
+            android:layout_gravity="center">
+
+        <EditText
+                style="@style/edit_element"
+                android:id="@+id/editTextName"
+                android:hint="@string/habit_name"
+                android:importantForAutofill="no"/>
+
+        <EditText
+                style="@style/edit_element"
+                android:id="@+id/editTextDescription"
+                android:layout_below="@+id/editTextName"
+                android:hint="@string/habit_description"
+                android:importantForAutofill="no"/>
+
+        <EditText
+                style="@style/edit_element"
+                android:id="@+id/editTextQuantity"
+                android:layout_below="@+id/editTextDescription"
+                android:hint="@string/habit_quantity"
+                android:importantForAutofill="no"/>
+
+        <EditText
+                style="@style/edit_element"
+                android:id="@+id/editTextPeriod"
+                android:layout_below="@+id/editTextQuantity"
+                android:hint="@string/habit_period"
+                android:importantForAutofill="no"/>
+        <TextView
+                style="@style/base_style"
+                android:id="@+id/textViewPriority"
+                android:layout_below="@+id/editTextPeriod"
+                android:layout_margin="@dimen/card_padding"
+                android:textSize="@dimen/base_size"
+                android:text="@string/priority_selection"/>
+        <Spinner
+                style="@style/base_style"
+                android:id="@+id/spinnerPriority"
+                android:padding="@dimen/card_padding"
+                android:entries="@array/habit_priority"
+                android:layout_below="@+id/editTextPeriod"
+                android:layout_toEndOf="@+id/textViewPriority"/>
+
+        <RadioGroup
+                style="@style/base_style"
+                android:id="@+id/radioGroupType"
+                android:layout_below="@+id/spinnerPriority"
+                android:padding="@dimen/card_padding"
+                android:orientation="horizontal">
+
+            <RadioButton
+                    style="@style/base_style"
+                    android:id="@+id/radioButtonGoodType"
+                    android:text="@string/good_habit"
+                    android:checked="true"/>
+
+            <RadioButton
+                    style="@style/base_style"
+                    android:id="@+id/radioButtonBadType"
+                    android:text="@string/bad_habit"/>
+        </RadioGroup>
+
+        <Button
+                style="@style/base_style"
+                android:id="@+id/saveHabit"
+                android:layout_below="@+id/radioGroupType"
+                android:layout_centerHorizontal="true"
+                android:text="@string/save_habit"
+                android:onClick="onSaveButtonClicked"/>
+
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
